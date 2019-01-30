@@ -120,6 +120,8 @@ const ninetyDaysInMilliseconds = 90 * 24 * 60 * 60 * 1000
 // Configuring HTTPS on a custom website requires the acquisition of a domain,
 // and a SSL/TSL Certificate.
 
+app.use(helmet.hsts({ maxAge: ninetyDaysInMilliseconds, force: true }))
+
 /** 8) Disable DNS Prefetching - `helmet.dnsPrefetchControl()` */
 
 // To improve performance, most browsers prefetch DNS records for the links in
