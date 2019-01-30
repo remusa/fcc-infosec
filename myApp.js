@@ -18,7 +18,7 @@ const app = express() // Do Not Edit
 // Install the package, then require it.
 const helmet = require('helmet')
 
-app.use(helmet())
+// app.use(helmet())
 
 /** 2) Hide potentially dangerous information - `helmet.hidePoweredBy()` */
 
@@ -176,6 +176,20 @@ app.use(helmet.noCache())
 // **Hint**:
 // in the `"'self'"` keyword, the single quotes are part of the keyword itself,
 // so it needs to be enclosed in **double quotes** to be working.
+
+// helmet.contentSecurityPolicy({
+//     directives: {
+//           defaultSrc: ["'self'"],
+//         styleSrc: ["'self'", 'trusted-cdn.com'],
+//     },
+// })
+
+helmet.contentSecurityPolicy({
+    directives: {
+        defaultSrc: ["'self'"],
+        styleSrc: ["'self'", 'trusted-cdn.com'],
+    },
+})
 
 /** TIP: */
 
