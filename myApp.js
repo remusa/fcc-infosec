@@ -135,6 +135,8 @@ app.use(helmet.hsts({ maxAge: ninetyDaysInMilliseconds, force: true }))
 
 // Use `helmet.dnsPrefetchControl()`
 
+app.use(helmet.dnsPrefetchControl())
+
 /** 9) Disable Client-Side Caching - `helmet.noCache()` */
 
 // If you are releasing an update for your website, and you want your users
